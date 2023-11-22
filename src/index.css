@@ -11,6 +11,14 @@ body {
     overflow: hidden;
 }
 
+h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10vh;
+    padding: 25vh;
+}
+
 .nav {
     position: fixed;
     width: 30vh;

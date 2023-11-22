@@ -1,58 +1,68 @@
 import React from "react";
 import logo from "../../assets/logo.png";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHouse } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faHouse,
+  faCartShopping,
+  faUtensils,
+  faTag,
+  faGear,
+  faArrowRightFromBracket,
+} from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 function Navbar() {
-
   return (
     <nav className="nav bd-container">
       <div className="nav__logo">
-        <a href="#" className="nav__link">
+        <Link to="#" className="nav__link">
           <img src={logo} alt="MFX" />
-        </a>
+        </Link>
       </div>
 
       <div className="nav__menu">
         <ul className="nav__list">
           <li className="nav__item">
-            <a href="#" className="nav__link">
+            <Link to="/dashboard" className="nav__link">
               <FontAwesomeIcon icon={faHouse} className="nav__icon" />
               <span>Dashboard</span>
-            </a>
+            </Link>
           </li>
           <li className="nav__item">
-            <a href="#" className="nav__link">
-              <FontAwesomeIcon icon={faHouse} className="nav__icon" />
+            <Link to="/purchase" className="nav__link">
+              <FontAwesomeIcon icon={faCartShopping} className="nav__icon" />
               <span>Purchase</span>
-            </a>
+            </Link>
           </li>
           <li className="nav__item">
-            <a href="#" className="nav__link">
-              <FontAwesomeIcon icon={faHouse} className="nav__icon" />
+            <Link to="/products" className="nav__link">
+              <FontAwesomeIcon icon={faUtensils} className="nav__icon" />
               <span>Products</span>
-            </a>
+            </Link>
           </li>
           <li className="nav__item">
-            <a href="#" className="nav__link">
-              <FontAwesomeIcon icon={faHouse} className="nav__icon" />
+            <Link to="/label" className="nav__link">
+              <FontAwesomeIcon icon={faTag} className="nav__icon" />
               <span>Label</span>
-            </a>
+            </Link>
           </li>
         </ul>
 
         <ul className="nav__list">
           <li className="nav__item">
-            <a href="#" className="nav__link">
-              <FontAwesomeIcon icon={faHouse} className="nav__icon" />
+            <Link to="/settings" className="nav__link">
+              <FontAwesomeIcon icon={faGear} className="nav__icon" />
               <span>Settings</span>
-            </a>
+            </Link>
           </li>
           <li className="nav__item">
-            <a href="#" className="nav__link">
-              <FontAwesomeIcon icon={faHouse} className="nav__icon" />
+            <Link to="/logout" className="nav__link">
+              <FontAwesomeIcon
+                icon={faArrowRightFromBracket}
+                className="nav__icon"
+              />
               <span>Logout</span>
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
