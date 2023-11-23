@@ -171,3 +171,14 @@ table tbody tr td .preparando {
 table tbody tr td .pendente {
     background-color: #FFB572;
 }
+
+.container__categories {
+    border: 1px solid #B370CD;
+    border-radius: 1vh;
+    cursor: pointer;
+}
+
+.container__categories h4 {
+    display: flex;
+    gap: 1vh;
+}
