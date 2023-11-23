@@ -17,14 +17,39 @@ h1 {
     align-items: center;
     font-size: 10vh;
     padding: 25vh;
+    width: 100%;
+}
+
+h2 {
+    color: #B370CD;
+    margin-bottom: 2vh;
+}
+
+h4 {
+    color: #B370CD;
+    padding: 2vh;
+    font-weight: 600;
+}
+
+span {
+    color: #B370CD;
+    /* padding: 2vh; */
+}
+
+p {
+    color: #B8B6B6;
 }
 
 .nav {
-    position: fixed;
-    width: 30vh;
+    width: 25%;
     height: 100vh;
     padding: 3vh;
     box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.1);
+}
+
+.nav__routes {
+    display: flex;
+    width: 100%;
 }
 
 .nav__logo {
@@ -36,7 +61,7 @@ h1 {
 
 .nav__menu {
     display: inline-grid;
-    gap: 50vh;
+    gap: 40vh;
     padding: 2vh;
 }
 
@@ -69,4 +94,80 @@ h1 {
 
 .nav__link svg:hover {
     color: #f28032;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    padding: 10vh;   
+}
+
+.container__table {
+    position: relative;
+    margin: 5vh 0;
+    padding: 5vh 25vh;
+    box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.1);
+    border: none;
+}
+
+.container__title {
+    display: flex;
+    justify-content: space-between;
+    margin: 3vh 0;
+}
+
+.container__filter {
+    border: 1px solid #B370CD;
+    border-radius: 10vh;
+    cursor: pointer;
+}
+
+.container__filter h4 {
+    display: flex;
+    gap: 1vh;
+}
+
+table {
+    width: 100%;
+    padding: 0;
+}
+
+table thead tr {
+    text-align: center;
+}
+
+table thead tr th {
+    color: #B8B6B6;
+    text-align: center;
+    padding: 2vh;
+    font-weight: 100;
+}
+
+table tbody tr {
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+    height: 7vh;
+    border-radius: 1vh;
+}
+
+table tbody tr td {
+   padding: 2vh;
+   text-align: center;
+}
+
+table tbody tr td span {
+    color: #000021;
+    padding: 1vh;
+    border-radius: 2vh;   
+}
+
+table tbody tr td .completo {
+    background-color: #64E9C1;
+}
+
+table tbody tr td .preparando {
+    background-color: #9290FE;
+}
+
+table tbody tr td .pendente {
+    background-color: #FFB572;
 }

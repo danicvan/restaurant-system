@@ -12,15 +12,17 @@ function App() {
   return (
     <>
       <Router>
-        <Navbar />
-        <Routes>
-          <Route path="/dashboard" Component={Dashboard}/>
-          <Route path="/purchase" Component={Purchase}/>
-          <Route path="/products" Component={Products}/>
-          <Route path="/label" Component={Label}/>
-          <Route path="/settings" Component={Settings}/>
-          <Route path="/logout" Component={Logout}/>
-        </Routes>
+        <div className="nav__routes">
+          <Navbar />
+          <Routes>
+            <Route path="/dashboard" Component={Dashboard} />
+            <Route path="/purchase" Component={Purchase} />
+            <Route path="/products" Component={Products} />
+            <Route path="/label" Component={Label} />
+            <Route path="/settings" Component={Settings} />
+            <Route path="/logout" Component={Logout} />
+          </Routes>
+        </div>
       </Router>
     </>
   );
