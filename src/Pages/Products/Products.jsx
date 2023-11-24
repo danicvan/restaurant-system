@@ -33,30 +33,8 @@ function Products() {
             </ul>
           </div>
         </div>
-        <div className="container__table">
-          <div className="container__categories">
-            <h4>
-              <FontAwesomeIcon icon={faFilter} className="nav__icon" />
-              <span>Gerenciar Categorias</span>
-            </h4>
-          </div>
-
-          <div className="option">
-            <ul className="option__list">
-              <li className="active">
-                <h4>Pratos Quentes</h4>
-                <span></span>
-              </li>
-              <li>
-                <h4>Pratos Frios</h4>
-                <span></span>
-              </li>
-              <li>
-                <h4>Sopas</h4>
-                <span></span>
-              </li>
-            </ul>
-          </div>
+        <div className="container__options">
+          
         </div>
       </div>
     </>
