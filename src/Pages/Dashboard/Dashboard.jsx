@@ -15,7 +15,7 @@ function Dashboard() {
             <div className="container__filter">
               <h4>
                 <FontAwesomeIcon icon={faFilter} className="nav__icon" />
-                <span>Filtro</span>
+                <span>Filter</span>
               </h4>
             </div>
           </div>

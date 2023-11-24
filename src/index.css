@@ -41,8 +41,8 @@ p {
 }
 
 .nav {
-    width: 25%;
-    height: 100vh;
+    min-width: 17%;
+    min-height: 100vh;
     padding: 3vh;
     box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.1);
 }
@@ -105,7 +105,7 @@ p {
 .container__table {
     position: relative;
     margin: 5vh 0;
-    padding: 5vh 25vh;
+    padding: 5vh 5vh 0vh 5vh;
     box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.1);
     border: none;
 }
@@ -120,6 +120,11 @@ p {
     border: 1px solid #B370CD;
     border-radius: 10vh;
     cursor: pointer;
+    transition: .2s;
+}
+
+.container__filter:hover {
+    opacity: .8;
 }
 
 .container__filter h4 {
@@ -176,9 +181,44 @@ table tbody tr td .pendente {
     border: 1px solid #B370CD;
     border-radius: 1vh;
     cursor: pointer;
+    transition: .2s;
+}
+
+.container__categories:hover {
+    opacity: .8;
 }
 
 .container__categories h4 {
     display: flex;
     gap: 1vh;
 }
+
+.option {
+    padding: 5vh 0 0 0;
+}
+
+.option__list {
+    display: flex;
+    justify-content: space-between;
+    gap: 15%;
+}
+.option__list li {
+    list-style: none;
+}
+
+.option__list li h4 {
+    color: #B370CD;
+    padding: 2vh 0;
+}
+
+.option__list .active span {
+    position: absolute;
+    content: '';
+    background-color: #B370CD;
+    width: 8.5vh;
+    height: 0.5vh;
+    transform: .5s;
+    border-radius: 10px;
+    bottom: -2.5px;
+}
+
