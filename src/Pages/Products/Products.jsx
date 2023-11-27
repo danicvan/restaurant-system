@@ -3,6 +3,8 @@ import {
   faFilter,
 } from "@fortawesome/free-solid-svg-icons";
 
+import Card from "../../Components/Card/Card";
+
 function Products() {
   return (
     <>
@@ -34,9 +36,13 @@ function Products() {
           </div>
         </div>
         <div className="container__options">
-          
+          <div className="cards">
+            <Card />
+          </div>
         </div>
       </div>
+
+
     </>
   )
 }
