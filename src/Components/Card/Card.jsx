@@ -1,4 +1,8 @@
-import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+    faPenToSquare,
+  } from "@fortawesome/free-solid-svg-icons";
+  
 import { CardData } from "../CardData/CardData";
 
 function Card() {
@@ -6,18 +10,21 @@ function Card() {
         <>
             {CardData.map((item, index) => {
                 return (
-                <div key={index}>
-                    <img src={item.image} alt={item.title} />
-                    <h5 className="card__title">{item.title}</h5>
-                    <span className="card__price">{item.price}</span>
-                    <div className="card__edit">
-                        <span>Editar Prato</span>
+                    <div key={index} className="card">
+                        <div className="card__information">
+                            <img className="card__image" src={item.image} alt={item.title} />
+                            <h5 className="card__title">{item.title}</h5>
+                            <h5 className="card__price">{item.price}</h5>
+                        </div>
+                        <div className="card__action">
+                            <FontAwesomeIcon icon={faPenToSquare} className="nav__icon" />
+                            <span>Editar Prato</span>
+                        </div>
                     </div>
-                </div>
                 )
             })}
         </>
-    );  
+    );
 }
 
 export default Card;

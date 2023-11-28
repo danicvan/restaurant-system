@@ -4,6 +4,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 import Card from "../../Components/Card/Card";
+import Buttons from "../../Components/Buttons/Button";
 
 function Products() {
   return (
@@ -40,9 +41,10 @@ function Products() {
             <Card />
           </div>
         </div>
+        <div className="buttons">
+          <Buttons/>
+        </div>
       </div>
-
-
     </>
   )
 }
