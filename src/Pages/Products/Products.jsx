@@ -5,6 +5,7 @@ import {
 
 import Card from "../../Components/Card/Card";
 import Buttons from "../../Components/Buttons/Button";
+import ProductDescription from "../../Components/ProductDescription/ProductDescription"
 
 function Products() {
   return (
@@ -36,13 +37,19 @@ function Products() {
             </ul>
           </div>
         </div>
+
         <div className="container__options">
           <div className="cards">
             <Card />
           </div>
         </div>
+
         <div className="buttons">
           <Buttons/>
+        </div>
+
+        <div >
+          <ProductDescription/>
         </div>
       </div>
     </>
