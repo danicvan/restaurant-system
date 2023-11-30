@@ -1,11 +1,17 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
     faPenToSquare,
-  } from "@fortawesome/free-solid-svg-icons";
-  
+} from "@fortawesome/free-solid-svg-icons";
+
 import { CardData } from "../CardData/CardData";
+import { ProductDescription } from "../ProductDescription/ProductDescription";
+
+import { useState } from "react";
 
 function Card() {
+
+    const [showMyModal, setShowMyModal] = useState(false);
+
     return (
         <>
             {CardData.map((item, index) => {
@@ -18,11 +24,13 @@ function Card() {
                         </div>
                         <div className="card__action">
                             <FontAwesomeIcon icon={faPenToSquare} className="nav__icon" />
-                            <span>Editar Prato</span>
+                            <button onClick={() => setShowMyModal(true)}>Editar Prato</button>
                         </div>
                     </div>
                 )
             })}
+
+            <ProductDescription visible={showMyModal} />
         </>
     );
 }
