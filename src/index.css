@@ -260,7 +260,7 @@ table tbody tr td .pendente {
     border-bottom: 1px solid #B5B4B4;
 }
 
-.cards {
+ .cards {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     padding-bottom: 5vh;
@@ -278,6 +278,17 @@ table tbody tr td .pendente {
     border-radius: 1vh;
     gap: 4vh;
     padding: 2vh 0vh 0vh;
+}
+
+.card__new {
+    border: 1px dashed;
+    color: #B370CD;
+    cursor: pointer;
+    box-shadow: 4px 4px 4px 0px rgba(.0, .0, .0, .1)
+}
+
+.card__new .card__title {
+    padding: 0;
 }
 
 .card__information {
@@ -316,6 +327,15 @@ table tbody tr td .pendente {
     background-color: #b370cd17;
     border: 1px solid #b370cd17;
     transition: .2s;
+}
+
+.card__action button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-weight: 600;
+    color: #B370CD;
+    font-size: 15px;
 }
 
 ::-webkit-scrollbar {
@@ -370,4 +390,116 @@ table tbody tr td .pendente {
 .button:hover span{
     color: #fff;
     transition: .2s;
+}
+
+.modal {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+
+    background: rgba(49,49,49,.5);
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.productDescription {
+    background: #ffffff;
+    border-radius: 1vh;
+    padding: 1vh 15vh;
+}
+
+.productDescription__details {
+    display: grid;
+    gap: 4vh;
+}
+
+.productDescription__close {
+    position: relative;
+    right: 0;
+    left: 119%;
+}
+
+.productDescription__close .nav__icon {
+    border: 1px solid;
+    padding: 5px;
+}
+
+.nav__icon, .image__action, .productDescription__action {
+    cursor: pointer;
+}
+
+.image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image__background {
+    position: relative;
+    border-radius: 50%;
+    opacity: 0.2;
+}
+
+.image__action {
+    position: absolute;
+    color: #000000;
+    font-size: 12px;
+}
+
+.productDescription__action {
+    position: relative;
+    left: 65%;
+    top: -50px;
+    font-size: 12px;
+    text-decoration: underline;
+}
+
+.productDescription__details hr {
+    position: absolute;
+    top: 45%;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.productDescription__details .buttons {
+    box-shadow: 0 0 0 0;
+    padding: 4vh;
+}
+
+.button:hover span{
+    color: #fff;
+    transition: .2s;
+}
+
+.form {
+    display: grid;
+    gap: 2vh;
+}
+
+.form__name, .form__price, .form__description {
+    display: inline-flex;
+    gap: 1vh;
+}
+
+.form__name input, .form__price input, .form__description textarea {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #B370CD;
+    border-radius: 4px;
+}
+
+
+.form__name label, .form__price label, .form__description label {
+    color: #767676;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.form__price label {
+    width: 20%;
 }
