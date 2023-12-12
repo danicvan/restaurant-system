@@ -7,15 +7,22 @@ import { CardData } from "../CardData/CardData";
 
 import { useState } from "react";
 import ProductDescription from "../ProductDescription/ProductDescription";
+import NewProduct from "../NewProduct/NewProduct";
 
 function Card() {
 
     const [showMyModal, setShowMyModal] = useState(false);
+    const [showNewProduct, setShowNewProduct] = useState(false);
     const handleOnClose = () => setShowMyModal(false);
+    const handleOnCloseNewProduct = () => setShowNewProduct(false);
 
     return (
         <>
+<<<<<<< HEAD
             <div className="card card__new">
+=======
+            <div className="card card__new" onClick={() => setShowNewProduct(true)}>
+>>>>>>> c0b35f4d5787d812eee16154b742055e4767552d
                 <div className="card__information">
                     <h2 className="card__title">+</h2>
                     <h4 className="card__title">Adicionar</h4>
@@ -42,6 +49,10 @@ function Card() {
 
             <div>
                 <ProductDescription onClose={handleOnClose} visible={showMyModal} />
+            </div>
+
+            <div>
+                <NewProduct onClose={handleOnCloseNewProduct} visible={showNewProduct} />
             </div>
 
         </>
