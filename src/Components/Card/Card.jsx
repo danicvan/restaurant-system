@@ -15,8 +15,6 @@ function Card() {
 
     return (
         <>
-            {/* <div> */}
-
             <div className="card card__new">
                 <div className="card__information">
                     <h2 className="card__title">+</h2>
@@ -41,7 +39,6 @@ function Card() {
                 )
 
             })}
-            {/* </div> */}
 
             <div>
                 <ProductDescription onClose={handleOnClose} visible={showMyModal} />
