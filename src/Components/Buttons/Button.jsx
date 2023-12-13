@@ -1,15 +1,17 @@
-function Buttons() {
-    return (
-        <>
-            <div className="button">
-                <span>Descartar</span>
-            </div>
+import React from 'react';
 
-            <div className="button">
-                <span>Salvar</span>
-            </div>
-        </>
-    );
+function Buttons({ onCancel, onSave, discardText = 'Descartar', saveText = 'Salvar' }) {
+  return (
+    <>
+      <div className="button" onClick={onCancel}>
+        <span>{discardText}</span>
+      </div>
+
+      <div className="button" onClick={onSave}>
+        <span>{saveText}</span>
+      </div>
+    </>
+  );
 }
 
 export default Buttons;

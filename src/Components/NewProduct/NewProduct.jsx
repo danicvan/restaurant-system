@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-import Product1 from '../../assets/card-1.png';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClose } from '@fortawesome/free-solid-svg-icons';
-import Buttons from '../Buttons/Button';
+import React, { useState } from "react";
+import Product1 from "../../assets/card-1.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faClose } from "@fortawesome/free-solid-svg-icons";
+import Buttons from "../Buttons/Button";
 
-function NewProduct({ visible, onClose }) {
+function NewProduct({ visible, onClose, onProductAdded }) {
   const [formData, setFormData] = useState({
-    name: '',
-    price: '',
-    description: '',
+    name: "",
+    price: "",
+    description: "",
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -25,20 +25,23 @@ function NewProduct({ visible, onClose }) {
   const handleSaveClick = async () => {
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:3000/products', {
-        method: 'POST',
+      const response = await fetch("http://localhost:3000/products", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
-          // You may need to include additional headers, such as authentication headers
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
       });
 
       if (!response.ok) {
-        throw new Error('Failed to save data');
+        throw new Error("Failed to save data");
       }
 
       setSuccess(true);
+      onClose();
+
+      // Call the callback function to inform the parent component
+      onProductAdded();
     } catch (error) {
       setError(error.message);
     } finally {
@@ -49,7 +52,7 @@ function NewProduct({ visible, onClose }) {
   const handleModalClose = () => {
     if (success) {
       // You can perform additional actions here upon successful submission
-      console.log('Data saved successfully!');
+      console.log("Data saved successfully!");
     }
     onClose();
   };
@@ -61,7 +64,11 @@ function NewProduct({ visible, onClose }) {
       <div className="productDescription">
         <div className="productDescription__details">
           <div className="productDescription__close">
-            <FontAwesomeIcon icon={faClose} className="nav__icon" onClick={handleModalClose} />
+            <FontAwesomeIcon
+              icon={faClose}
+              className="nav__icon"
+              onClick={handleModalClose}
+            />
           </div>
           <div className="image">
             <img className="image__background" src={Product1} alt="" />
@@ -102,13 +109,13 @@ function NewProduct({ visible, onClose }) {
           </div>
 
           <div className="buttons">
-            <Buttons action={handleSaveClick} disabled={loading}>
-              {loading ? 'Salvando...' : 'Salvar'}
-            </Buttons>
+            <Buttons onCancel={handleModalClose} onSave={handleSaveClick} />
           </div>
 
           {error && <div className="error-message">{error}</div>}
-          {success && <div className="success-message">Data saved successfully!</div>}
+          {success && (
+            <div className="success-message">Data saved successfully!</div>
+          )}
         </div>
       </div>
     </div>

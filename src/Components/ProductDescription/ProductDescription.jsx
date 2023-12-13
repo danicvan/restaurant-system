@@ -1,11 +1,16 @@
 import Product1 from "../../assets/card-1.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-    faClose,
+    faClose, faL,
 } from "@fortawesome/free-solid-svg-icons";
 import Buttons from "../Buttons/Button";
+import { useState } from "react";
 
 function ProductDescription({ visible, onClose }) {
+
+    const handleModalClose = () => {
+        onClose();
+    }
 
     if (!visible) return null;
 
@@ -21,7 +26,6 @@ function ProductDescription({ visible, onClose }) {
                         <span className="image__action">Editar Imagem</span>
                     </div>
                     <span className="productDescription__action">Remover</span>
-                    {/* <hr /> */}
 
                     <div className="form" >
                         <div className="form__name">
@@ -39,7 +43,7 @@ function ProductDescription({ visible, onClose }) {
                     </div>
 
                     <div className="buttons">
-                        <Buttons />
+                        <Buttons onCancel={handleModalClose}/>
                     </div>
                 </div>
             </div>
