@@ -18,11 +18,8 @@ function Card() {
 
     return (
         <>
-<<<<<<< HEAD
-            <div className="card card__new">
-=======
             <div className="card card__new" onClick={() => setShowNewProduct(true)}>
->>>>>>> c0b35f4d5787d812eee16154b742055e4767552d
+
                 <div className="card__information">
                     <h2 className="card__title">+</h2>
                     <h4 className="card__title">Adicionar</h4>
