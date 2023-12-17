@@ -9,6 +9,7 @@ function NewProduct({ visible, onClose, onProductAdded }) {
     name: "",
     price: "",
     description: "",
+    image: Product1, // Default image
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -20,6 +21,31 @@ function NewProduct({ visible, onClose, onProductAdded }) {
       ...prevData,
       [name]: value,
     }));
+  };
+
+  const handleImageEdit = () => {
+    const fileInput = document.createElement("input");
+    fileInput.type = "file";
+
+    fileInput.addEventListener("change", (e) => {
+      const file = e.target.files[0];
+
+      if (file) {
+        const reader = new FileReader();
+        reader.onloadend = () => {
+          const imageDataUrl = reader.result;
+
+          setFormData((prevData) => ({
+            ...prevData,
+            image: imageDataUrl,
+          }));
+        };
+
+        reader.readAsDataURL(file);
+      }
+    });
+
+    fileInput.click();
   };
 
   const handleSaveClick = async () => {
@@ -51,7 +77,6 @@ function NewProduct({ visible, onClose, onProductAdded }) {
 
   const handleModalClose = () => {
     if (success) {
-      // You can perform additional actions here upon successful submission
       console.log("Data saved successfully!");
     }
     onClose();
@@ -70,8 +95,8 @@ function NewProduct({ visible, onClose, onProductAdded }) {
               onClick={handleModalClose}
             />
           </div>
-          <div className="image">
-            <img className="image__background" src={Product1} alt="" />
+          <div className="image" onClick={handleImageEdit}>
+            <img className="image__background" src={formData.image} alt="" />
             <span className="image__action">Editar Imagem</span>
           </div>
           <span className="productDescription__action">Remover</span>

@@ -9,12 +9,10 @@ function Card() {
   const [loading, setLoading] = useState(true);
   const [showMyModal, setShowMyModal] = useState(false);
   const [showNewProduct, setShowNewProduct] = useState(false);
-  const handleOnClose = () => setShowMyModal(false);
-  const handleOnCloseNewProduct = () => setShowNewProduct(false);
 
   useEffect(() => {
     fetchData();
-  }, [showMyModal, showNewProduct]); // Include showMyModal and showNewProduct in the dependency array
+  }, [showMyModal, showNewProduct]);
 
   const fetchData = async () => {
     try {
@@ -29,7 +27,6 @@ function Card() {
   };
 
   const handleProductAdded = () => {
-    // Update the products data when a new product is added
     fetchData();
   };
 
@@ -48,6 +45,9 @@ function Card() {
         products ? (
           products.map((item) => (
             <div key={item.code} className="card">
+              <div className="card__image">
+                <img src={item.image} alt={item.name} />
+              </div>
               <div className="card__information">
                 <h5 className="card__title">{item.name}</h5>
                 <h5 className="card__price">{item.price}</h5>
@@ -63,12 +63,12 @@ function Card() {
       )}
 
       <div>
-        <ProductDescription onClose={handleOnClose} visible={showMyModal} />
+        <ProductDescription onClose={() => setShowMyModal(false)} visible={showMyModal} />
       </div>
 
       <div>
         <NewProduct
-          onClose={handleOnCloseNewProduct}
+          onClose={() => setShowNewProduct(false)}
           visible={showNewProduct}
           onProductAdded={handleProductAdded}
         />
