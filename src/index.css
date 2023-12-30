@@ -296,7 +296,7 @@ table tbody tr td .pendente {
     gap: 2vh;
 }
 
-.card__image {
+.card__image img {
     border-radius: 50%;
 }
 
