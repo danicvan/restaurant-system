@@ -1,11 +1,15 @@
-import React from 'react'
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
-function Logout() {
-  return (
-    <>
-      <h1>Logout</h1>
-    </>
-  )
+function Logout({ onLogout }) {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    onLogout();
+    navigate("/login");
+  }, [navigate, onLogout]);
+
+  return null;
 }
 
-export default Logout
+export default Logout;

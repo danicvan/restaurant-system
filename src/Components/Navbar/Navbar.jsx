@@ -10,7 +10,11 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
-function Navbar() {
+function Navbar({ authenticated }) {
+  if (!authenticated) {
+    return null; // Return null if not authenticated to hide the Navbar
+  }
+  
   return (
     <nav className="nav bd-container">
       <div className="nav__logo">
